@@ -10,6 +10,11 @@ body{
     margin: 0;
 }
 
+main{
+    width: 50%;
+    margin: 0 auto;
+}
+
 /*Header*/
 
 header{
@@ -51,3 +56,26 @@ nav ul li{
 }
 
 /*Section 1*/
+.about-me{
+    display: flex;
+    margin-top: 90px;
+    
+}
+
+.description{
+    margin: auto;
+}
+
+.title-desc{
+    margin-right: 90px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.about-me img{
+    height: 440px;
+    width: 356px;
+    border-radius: 20px;
+    object-fit: cover;
+}
