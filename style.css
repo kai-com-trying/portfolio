@@ -78,4 +78,5 @@ nav ul li{
     width: 356px;
     border-radius: 20px;
     object-fit: cover;
+    cursor: pointer;
 }
