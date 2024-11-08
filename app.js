@@ -59,32 +59,39 @@ const saving = document.getElementById('saving');
 const addTargetSaving = () => {
     targetSaving += 10000;
     target.innerHTML = targetSaving;
+    calculateAnnualSavings();
 }
 
 const minusTargetSaving = () => {
     targetSaving -= 10000;
     target.innerHTML = targetSaving;
+    calculateAnnualSavings();
 }
 
 const addTargetYear = () => {
-    targetYear ++;
+    targetYear++;
     targetSavingYear.innerHTML = targetYear;
+    calculateAnnualSavings();
 }
 
 const minusTargetYear = () => {
-    targetYear --;
+    targetYear--;
     targetSavingYear.innerHTML = targetYear;
+    calculateAnnualSavings();
 }
 
 const addInterestRate = () => {
-    interestRate += 0.0025
+    interestRate += 0.0025;
     interest.innerHTML = (interestRate * 100).toFixed(2);
+    calculateAnnualSavings();
 }
 
 const minusInterestRate = () => {
-    interestRate -= 0.0025
+    interestRate -= 0.0025;
     interest.innerHTML = (interestRate * 100).toFixed(2);
+    calculateAnnualSavings();
 }
+
 
 targetPlusButton.addEventListener('click', addTargetSaving);
 targetMinusButton.addEventListener('click', minusTargetSaving);
@@ -96,3 +103,12 @@ interestPlusButton.addEventListener('click', addInterestRate);
 interestMinusButton.addEventListener('click', minusInterestRate);
 
 
+
+const calculateAnnualSavings = () => {
+    if (targetYear > 0 && interestRate > 0) { // Ensure non-zero values to avoid errors
+        let annualSavings = (targetSaving * interestRate) / (Math.pow(1 + interestRate, targetYear) - 1);
+        document.getElementById('saving').innerHTML = Math.floor(annualSavings); // Display as an integer
+    } else {
+        document.getElementById('saving').innerHTML = 0; // Display 0 if inputs are invalid
+    }
+};
