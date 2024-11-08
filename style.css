@@ -137,3 +137,28 @@ nav a{
     display: none;
     background-color: #21202290;
 }
+
+/*Section 3*/
+.compound-interest{
+    margin: 50px 0;
+}
+
+.compound-interest p{
+    line-height: 2.5;
+}
+
+.compound-interest button{
+    width: 20px;
+    height: 100%;
+    border-radius: 8px;
+    border: none;
+    box-shadow: 1.5px 1.5px 5px #212022;
+}
+
+.compound-interest button:active{
+    box-shadow: none;
+}
+
+.compound-interest button:hover{
+    cursor: pointer;
+}
